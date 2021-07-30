@@ -1,0 +1,200 @@
+:root{
+    --fuentePrincipal: 'Pt Sans', sans-serif;
+    --fuenteSecundario: 'Open Sans', sans-serif;
+
+    --blanco: #ffffff;
+    --negro: #000000;
+}
+
+html{
+    background: url(Imagenes/1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+    font-size: 62.5%; /* 1rem = 10px*/
+}
+*,*:before,*:after {
+    box-sizing: inherit;
+}
+body{
+    font-family: var(--fuenteSecundario);
+    font-size: 1.6rem;
+    line-height: 2;
+    margin: 0;
+}
+
+/* Golbales */
+.contenedor{
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto 4rem auto;
+}
+
+h1,h3{
+    font-family: var(--fuentePrincipal);
+    font-weight: 400;
+}
+h1{
+    font-size:4.8rem ;
+}
+h3{
+    font-size: 3rem;
+}
+p{
+    margin: 0;
+    font-size: 2rem;
+    color: var(--blanco);
+}
+div {
+    /* margin-bottom: 2rem; */
+    color: var(--blanco);
+}
+
+input, #botonExportar button{
+    font-family: var(--fuenteSecundario);
+    height: 4rem;
+    color: var(--negro);
+    padding: 1rem;
+    background-color: var(--blanco);
+    border: 1px solid gray;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+#botonExportar button:hover{
+    background: rgba(255, 255, 255, 0.8);
+    padding: 1rem 2rem;
+}
+
+/* Utilidades */
+.no-margin{
+    margin: 0;
+}
+
+/* Header */
+
+.logo_nombre{
+    color: var(--blanco);
+}
+
+/* Botones */
+
+.botones{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.ocultar{
+    display: none;
+}
+
+.noMostrar{
+    visibility: hidden;
+}
+
+/* Reproductor */
+
+#player{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.video{
+    height: 50rem;
+    width: 90rem;
+}
+
+.audio{
+    align-items: center;
+    width: 80rem;
+}
+#player button{
+    background-color: transparent;
+    padding: 1rem;
+    /* border: 1px solid gray; */
+    border: none;
+    cursor: pointer;
+}
+#player img{
+    width: 5rem;
+}
+#player img:hover {
+    width: 5.5rem;
+    
+}
+#siguiente{
+    order: 3;
+}
+
+/* Contenido */
+.tabla{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 11rem;
+}
+table{
+    border: 1px solid black;
+    background-color: rgba(255, 180, 120, 0.1);
+}
+
+thead{
+    background-color: rgba(252, 236, 222, 0.3);
+}
+tr:first-child td{
+    background-color: rgba(122, 120, 255, 0.4);
+    color: rgb(0, 255, 208);
+    padding: 1rem;
+}
+th, td{
+    padding: 0.5rem 3rem;
+    text-align: center;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+
+th:last-child, td:last-child{
+    border-right: none;
+}
+tr:last-child td{
+    border-bottom: none;
+}
+
+/* Creadores */
+
+.creadores{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem;
+    background: url(Imagenes/1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(255, 180, 120, 0.1);
+}
+a{
+    line-height: 1rem;
+}
+.creadores img{
+    width: 4rem;
+}
+
+.creadores img:hover{
+    width: 4.5rem;
+}
+#github{
+    width: 5.5rem
+}
+#github:hover{
+    width: 6rem
+}
+.diseñadores{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1rem;
+}

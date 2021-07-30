@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&family=PT+Sans:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="estilos.css">
+
+  </head>
+  <body>
+    <header class="header">
+      <div class="contenedor">
+          <h1 class="logo_nombre no-margin">Reproductor</h1>
+      </div>
+    </header>
+
+    <div class="contenedor">
+      <form>
+        <div class="contenedor">
+          <label for="playlist">File:</label>
+          <input id="playlist" name="playlist" type="file">
+        </div>
+        
+        <div id="botonExportar" class="botones ocultar">
+          <button id="export" type="button" class="noMostrar">Export</button>
+          <button id="historial" type="button">Historial de Reproducciones</button>
+        </div>
+      </form>
+    </div>
+    
+    <div id="player" class="contenedor">
+      <button id="anterior" type="button" class="noMostrar"><img src="Imagenes/left-arrow.png" alt="left-arrow"></button>
+      <button id="siguiente" type="button" class="noMostrar"><img src="Imagenes/right-arrow.png" alt="right-arrow"></button>
+    </div>
+
+    <div class="tabla">
+      <table id="reproduccion"></table>
+    </div>
+
+    <div class="creadores">
+      <h3 class="no-margin">Desing by:</h3>
+      <div class="diseñadores">
+        <a href="https://github.com/Avendaosander/Reproductor-Oficial"><img src="Imagenes/github.png" alt="Github Icon" id="github"></a>
+        <a href="https://www.instagram.com/avendaosander?r=nametag"><img src="Imagenes/instagram.png" alt="Instagram Icon"></a>
+        <p>Alexander Avendaño</p>
+      </div>
+      <div class="diseñadores">
+        <a href=""><img src="Imagenes/instagram.png" alt="Instagram Icon"></a>
+        <p>Richard Quintero</p>
+      </div>
+      <div class="diseñadores">
+        <a href=""><img src="Imagenes/instagram.png" alt="Instagram Icon"></a>
+        <p>María Páez</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
