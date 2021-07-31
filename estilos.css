@@ -12,6 +12,8 @@
 body{
     background: url(Imagenes/1.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     box-sizing: border-box;
     font-size: 16px;
     font-family: var(--fuenteSecundario);
