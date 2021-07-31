@@ -235,13 +235,12 @@ a{
         grid-column: 2/3;
     }
     .tabla{
-        margin-bottom: 40px;
+        margin-bottom: 300px;
     }
     th, td{
         padding: 5px 15px;
     }
     .creadores{
-        position: relative;
         flex-direction: column;
         gap: 15px;
     }
