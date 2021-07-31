@@ -110,10 +110,10 @@ function obtenerCSV() {
 
                 list.push({
                     id,
-                    type: prop[0] || null,
+                    /* type: prop[0] || null, */
                     title: prop[1] || null,
                     author: prop[2] || null,
-                    genre: prop[3] || null,
+                    /* genre: prop[3] || null, */
                     year: parseInt(prop[4]) || null,
                     path: prop[5] || null,
                 });
@@ -126,9 +126,9 @@ function obtenerCSV() {
             document.getElementById('siguiente').classList.remove('noMostrar')
 
             list.forEach(element => {
-                if (confirm(`Quieres elegir este ${element.type} para reproducir?\n${element.id}: ${element.title}`)) {
-                    fila.push(element);
-                }
+                /* if (confirm(`Quieres elegir este ${element.type} para reproducir?\n${element.id}: ${element.title}`)) {
+                } */
+                fila.push(element);
             });
             /* fila.print() */
             var reproduciendo = fila
@@ -149,7 +149,7 @@ function obtenerCSV() {
             const header = document.createElement('thead')
             tabla.appendChild(header)
 
-            const array = [`ID`, `Tipo`, `Título`, `Autor`, `Género`, `Año`]
+            const array = [`ID`, `Título`, `Autor`, `Año`]
             array.forEach(title => {
                 const head = document.createElement('th')
                 head.textContent = title;
@@ -192,18 +192,6 @@ function eliminarArchivo() {
         pila.push(fila.shift());
     } else {
         alert('No hay más archivos para eliminar, la PlayList ya se reprodució toda');
-    }
-}
-
-/* ----------------------------------------------------------- */
-
-function verHistorial() {
-
-    if (pila.isEmpty()) {
-        alert('No hay archivos reproducidos hasta el momento')
-    } else {
-        console.log('Historial de reproducción:\n\n')
-        pila.printPila()
     }
 }
 
@@ -277,19 +265,15 @@ function crearReproductor(element) {
     }
 
     // Configura el reproductor con el elemento actual
-    const media = document.createElement(element.type);
+    const media = document.createElement('audio');
     media.setAttribute(`controls`, ``);
     media.setAttribute(`autoplay`, ``);
     media.id = 'medio'
-    if (element.type == 'audio') {
-        media.classList.add('audio')
-    } else {
-        media.classList.add('video')
-    }
+    media.classList.add('audio')
 
     const source = document.createElement(`source`);
     source.setAttribute(`src`, element.path);
-    source.setAttribute(`type`, `${element.type}/${element.path.slice(element.path.lastIndexOf(`.`) + 1)}`);
+    source.setAttribute(`type`, `audio/mp3`);
 
     // Agrega el elemento al reproductor
     media.appendChild(source);
@@ -315,7 +299,13 @@ function crearReproductor(element) {
             eliminarElementos()
 
             if (confirm(`Desea ver el historial de reproducción en consola?`)) {
-                verHistorial()
+                if (pila.isEmpty()) {
+                    alert('No hay archivos reproducidos hasta el momento')
+                } else {
+                    console.clear()
+                    console.log('Historial de reproducción:\n\n')
+                    pila.printPila()
+                }
             }
         }
     })
@@ -372,8 +362,14 @@ function anteriorCancion() {
 
 function botonHistorial() {
     document.getElementById('historial').onclick = function () {
-        alert('Puedes ver el historial en la consola')
-        verHistorial()
+        if (pila.isEmpty()) {
+            alert('No hay archivos reproducidos hasta el momento')
+        } else {
+            console.clear()
+            console.log('Historial de reproducción:\n\n')
+            pila.printPila()
+            alert('Puedes ver el historial en la consola')
+        }
     }
 }
 
