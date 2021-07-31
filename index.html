@@ -23,11 +23,11 @@
     <div class="contenedor">
       <form>
         <div class="contenedor">
-          <label for="playlist">File:</label>
+          <label for="playlist">Seleccione sus canciones:</label>
           <input id="playlist" name="playlist" type="file">
         </div>
         
-        <div id="botonExportar" class="botones ocultar">
+        <div id="buttoms" class="botones ocultar">
           <button id="export" type="button" class="noMostrar">Export</button>
           <button id="historial" type="button">Historial de Reproducciones</button>
         </div>
@@ -39,8 +39,10 @@
       <button id="siguiente" type="button" class="noMostrar"><img src="Imagenes/right-arrow.png" alt="right-arrow"></button>
     </div>
 
-    <div class="tabla contenedor">
-      <table id="reproduccion"></table>
+    <div id="tablaPadre" class="ocultar">
+      <div class="tabla contenedor">
+        <table id="reproduccion"></table>
+      </div>
     </div>
 
     <div class="creadores">

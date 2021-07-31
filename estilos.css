@@ -47,7 +47,7 @@ div {
     color: var(--blanco);
 }
 
-input, #botonExportar button{
+input, #buttoms button{
     font-family: var(--fuenteSecundario);
     height: 40px;
     color: var(--negro);
@@ -58,7 +58,7 @@ input, #botonExportar button{
     cursor: pointer;
 }
 
-#botonExportar button:hover{
+#buttoms button:hover{
     background: rgba(255, 255, 255, 0.8);
     padding: 10px 20px;
 }
@@ -73,6 +73,9 @@ input, #botonExportar button{
 .logo_nombre{
     color: var(--blanco);
 }
+
+/* Drag and Drop */
+
 
 /* Botones */
 

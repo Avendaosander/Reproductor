@@ -95,6 +95,7 @@ function obtenerCSV() {
         const reader = new FileReader();
         reader.readAsText(files[0]);
 
+        reiniciarEstructuras()
         // Lectura del contenido del archivo
         reader.onload = ev => {
             const csv = ev.target.result;
@@ -119,9 +120,8 @@ function obtenerCSV() {
                 });
             });
 
-            reiniciarEstructuras()
-
-            document.getElementById('botonExportar').classList.remove('ocultar')
+            document.getElementById('tablaPadre').classList.remove('ocultar')
+            document.getElementById('buttoms').classList.remove('ocultar')
             document.getElementById('export').classList.remove('noMostrar')
             document.getElementById('siguiente').classList.remove('noMostrar')
 
@@ -212,7 +212,7 @@ function exportarCSV() {
     output.onclick = () => {
         // Se verifica el tamaño de la fila
         const newPlaylist = []
-        reproduciendo.forEach(CSV => {
+        fila.forEach(CSV => {
             newPlaylist.push(CSV)
         });
 
@@ -249,7 +249,7 @@ function exportarCSV() {
         eliminarElementos()
         reiniciarEstructuras()
 
-        document.getElementById('botonExportar').classList.add('ocultar')
+        document.getElementById('buttoms').classList.add('ocultar')
     }
 }
 
