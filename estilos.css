@@ -6,28 +6,26 @@
     --negro: #000000;
 }
 
-html{
-    background: url(Imagenes/1.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    box-sizing: border-box;
-    font-size: 62.5%; /* 1rem = 10px*/
-}
 *,*:before,*:after {
     box-sizing: inherit;
 }
 body{
+    background: url(Imagenes/1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+    /* font-size: 62.5%; */
+    font-size: 16px;
     font-family: var(--fuenteSecundario);
-    font-size: 1.6rem;
     line-height: 2;
     margin: 0;
 }
 
 /* Golbales */
 .contenedor{
-    max-width: 120rem;
+    max-width: 1200px;
     width: 90%;
-    margin: 0 auto 4rem auto;
+    margin: 0 auto 40px auto;
 }
 
 h1,h3{
@@ -35,14 +33,14 @@ h1,h3{
     font-weight: 400;
 }
 h1{
-    font-size:4.8rem ;
+    font-size:48px ;
 }
 h3{
-    font-size: 3rem;
+    font-size: 30px;
 }
 p{
     margin: 0;
-    font-size: 2rem;
+    font-size: 20px;
     color: var(--blanco);
 }
 div {
@@ -51,18 +49,18 @@ div {
 
 input, #botonExportar button{
     font-family: var(--fuenteSecundario);
-    height: 4rem;
+    height: 40px;
     color: var(--negro);
-    padding: 1rem;
+    padding: 10px;
     background-color: var(--blanco);
     border: 1px solid gray;
-    border-radius: 1rem;
+    border-radius: 10px;
     cursor: pointer;
 }
 
 #botonExportar button:hover{
     background: rgba(255, 255, 255, 0.8);
-    padding: 1rem 2rem;
+    padding: 10px 20px;
 }
 
 /* Utilidades */
@@ -97,24 +95,24 @@ input, #botonExportar button{
     align-items: center;
     display: flex;
     justify-content: center;
-    gap: 5rem;
+    gap: 50px;
 }
 
 .audio{
     align-items: center;
-    width: 80rem;
+    width: 800px;
 }
 #player button{
     background-color: transparent;
-    padding: 1rem;
+    padding: 10px;
     border: none;
     cursor: pointer;
 }
 #player img{
-    width: 5rem;
+    width: 50px;
 }
 #player img:hover {
-    width: 5.5rem;
+    width: 55px;
     
 }
 #siguiente{
@@ -125,7 +123,7 @@ input, #botonExportar button{
 .tabla{
     display: flex;
     justify-content: center;
-    margin-bottom: 11rem;
+    margin-bottom: 110px;
 }
 table{
     border: 1px solid black;
@@ -138,17 +136,17 @@ thead{
 tr:first-child td{
     background-color: rgba(122, 120, 255, 0.4);
     color: rgb(0, 255, 208);
-    padding: 1rem;
+    padding: 10px;
 }
 th, td{
-    padding: 0.5rem 3rem;
+    padding: 5px 30px;
     text-align: center;
     border-bottom: 1px solid black;
-    border-right: 1px solid black;
+    border-right:1px solid black;
 }
 
 th:last-child, td:last-child{
-    border-right: none;
+    border-right:none;
 }
 tr:last-child td{
     border-bottom: none;
@@ -163,71 +161,71 @@ tr:last-child td{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 1rem;
+    padding: 10px;
     background: url(Imagenes/1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-color: rgba(255, 180, 120, 0.1);
 }
 a{
-    line-height: 1rem;
+    line-height: 10px;
 }
 .creadores img{
-    width: 4rem;
+    width: 40px;
 }
 
 .creadores img:hover{
-    width: 4.5rem;
+    width: 45px;
 }
 #github{
-    width: 5.5rem
+    width: 55px
 }
 #github:hover{
-    width: 6rem
+    width: 60px
 }
 .diseñadores{
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 10px;
 }
 
 /* Media Queries */
 
 @media (max-width:800px) {
     h1{
-        font-size:3.8rem ;
+        font-size:38px ;
     }
     h3{
-        font-size: 2rem;
+        font-size: 20px;
     }
     p{
-        font-size: 1.5rem;
+        font-size: 15px;
     }
     .creadores img{
-        width: 3rem;
+        width: 30px;
     }
     
     .creadores img:hover{
-        width: 3.5rem;
+        width: 35px;
     }
     #github{
-        width: 4.5rem
+        width: 45px
     }
     #github:hover{
-        width: 5rem
+        width: 50px
     }
 }
 @media (max-width:620px) {
     h1{
-        font-size:2.8rem ;
+        font-size:28px ;
     }
     #player{
         display: grid;
-        gap: 3rem;
+        gap: 30px;
     }
     .audio{
         grid-column: 1/3;
-        width: 35rem;
+        width: 350px;
     }
     #anterior, #siguiente{
         grid-row: 2/3;
@@ -237,19 +235,19 @@ a{
         grid-column: 2/3;
     }
     .tabla{
-        margin-bottom: 4rem;
+        margin-bottom: 40px;
     }
     th, td{
-        padding: 0.5rem 1.5rem;
+        padding: 5px 15px;
     }
     .creadores{
         position: relative;
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 15px;
     }
     .diseñadores{
         border-top: 1px solid #ffffff;
-        height: 5rem;
+        height: 50px;
         width: 70%;
         justify-content: center;
     }
@@ -257,7 +255,7 @@ a{
 
 @media (max-width:375px) {
     input, .audio{
-        width: 30rem;
+        width: 300px;
     }
     .tabla{
         width: 100%;
@@ -266,9 +264,12 @@ a{
 
 @media (max-width:330px) {
     input, .audio{
-        width: 25rem;
+        width: 250px;
     }
     th, td{
-        padding: 0.5rem 1rem;
+        padding: 5px 10px;
+    }
+    .diseñadores{
+        width: 80%;
     }
 }
