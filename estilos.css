@@ -60,6 +60,11 @@ div {
 .ocultar {
     display: none;
 }
+
+.noMostrar {
+    visibility: hidden;
+}
+
 /* Header */
 
 .logo_nombre {
@@ -69,21 +74,38 @@ div {
 /* Form */
 
 .import {
+    position: relative;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100px;
     width: 800px;
     background-color: rgba(255, 180, 120, 0.2);
-    border-radius: 10px;
+    border-radius: 20px;
 }
-input, #buttoms button {
+input {
+    font-family: var(--fuenteSecundario);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#buttoms{
+    text-align: center;
+}
+
+#buttoms button {
     font-family: var(--fuenteSecundario);
     height: 40px;
     color: var(--negro);
-    padding: 10px;
     background-color: var(--blanco);
+    padding: 10px;
     border: 1px solid gray;
     border-radius: 10px;
     cursor: pointer;
@@ -93,12 +115,6 @@ input, #buttoms button {
     background: rgba(255, 255, 255, 0.8);
     padding: 10px 20px;
 }
-
-.boton {
-    text-align: center;
-}
-
-
 /* Reproductor */
 
 #player {
@@ -127,10 +143,6 @@ input, #buttoms button {
 #player img:hover {
     width: 55px;
 
-}
-
-.noMostrar {
-    visibility: hidden;
 }
 
 #siguiente {
