@@ -78,8 +78,8 @@ div {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     height: 100px;
-    width: 800px;
     background-color: rgba(255, 180, 120, 0.2);
     border-radius: 20px;
 }
@@ -243,6 +243,10 @@ a {
         font-size: 15px;
     }
 
+    .import{
+        height: 80px;
+    }
+
     .creadores img {
         width: 30px;
     }
@@ -305,6 +309,10 @@ a {
 }
 
 @media (max-width:375px) {
+
+    .import{
+        font-size: 11px;
+    }
 
     input, .audio {
         width: 300px;
