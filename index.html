@@ -11,7 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&family=PT+Sans:wght@700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="estilos.css">
-
   </head>
   <body>
     <header class="header">
@@ -22,13 +21,12 @@
 
     <div class="contenedor">
       <form>
-        <div class="contenedor">
-          <label for="playlist">Seleccione sus canciones:</label>
-          <input id="playlist" name="playlist" type="file">
+        <div class="import contenedor">
+          <label for="playlist">Arrastre o Busque sus canciones aquí:</label>
+          <input id="playlist" name="playlist" type="file" accept=".mp3" aria-label="Elige tus archivos" multiple>
         </div>
         
-        <div id="buttoms" class="botones ocultar">
-          <button id="export" type="button" class="noMostrar">Export</button>
+        <div id="buttoms" class="boton ocultar">
           <button id="historial" type="button">Historial de Reproducciones</button>
         </div>
       </form>
@@ -62,6 +60,7 @@
       </div>
     </div>
 
+    <script src="jsmediatags.min.js"></script>
     <script src="script.js"></script>
     <!-- <script src="reestructuracion.js"></script> -->
   </body>
