@@ -88,7 +88,6 @@ function leerArchivos() {
                     id,
                     title: tags.tags.title || file.name,
                     author: tags.tags.artist || `Desconocido`,
-                    genre: tags.tags.genre || `Desconocido`,
                     year: tags.tags.year || `Desconocido`,
                     src: URL.createObjectURL(file)
                 });
@@ -106,10 +105,6 @@ function leerArchivos() {
                 fila = []
                 pila = new Pila();
 
-                document.getElementById('tablaPadre').classList.remove('ocultar')
-                document.getElementById('buttoms').classList.remove('ocultar')
-                document.getElementById('siguiente').classList.remove('noMostrar')
-
                 list.forEach(element => {
                     /* if (confirm(`Quieres elegir este ${element.type} para reproducir?\n${element.id}: ${element.title}`)) {
                     } */
@@ -119,47 +114,51 @@ function leerArchivos() {
 
                 if (fila.length !== 0) {
                     crearReproductor(reproduciendo[0]);
-                } else {
-                    alert('No hay archivos para reproducir!!!!')
-                }
 
-                const tabla = document.getElementById('reproduccion')
+                    document.getElementById('tablaPadre').classList.remove('ocultar')
+                    document.getElementById('buttoms').classList.remove('ocultar')
+                    document.getElementById('siguiente').classList.remove('noMostrar')
 
-                while (tabla.firstChild) {
-                    tabla.removeChild(tabla.firstChild);
-                }
+                    const tabla = document.getElementById('reproduccion')
 
-                const header = document.createElement('thead')
-                tabla.appendChild(header)
-
-                const array = [`ID`, `Título`, `Autor`, `Genero`, `Año`]
-                array.forEach(title => {
-                    const head = document.createElement('th')
-                    head.textContent = title;
-
-                    header.appendChild(head);
-                });
-
-                const body = document.createElement(`tbody`);
-                body.id = 'cuerpoLista'
-                tabla.appendChild(body);
-
-                for (let i = 0; i < reproduciendo.length; i++) {
-                    reproduciendo[i].id = i + 1
-                }
-
-                reproduciendo.forEach(entry => {
-                    const row = document.createElement(`tr`);
-                    body.appendChild(row);
-
-                    for (const propiedad in entry) {
-                        if (propiedad !== 'src') {
-                            const cell = document.createElement(`td`);
-                            cell.textContent = entry[propiedad];
-                            row.appendChild(cell);
-                        }
+                    while (tabla.firstChild) {
+                        tabla.removeChild(tabla.firstChild);
                     }
-                });
+
+                    const header = document.createElement('thead')
+                    tabla.appendChild(header)
+
+                    const array = [`ID`, `Título`, `Autor`, `Año`]
+                    array.forEach(title => {
+                        const head = document.createElement('th')
+                        head.textContent = title;
+
+                        header.appendChild(head);
+                    });
+
+                    const body = document.createElement(`tbody`);
+                    body.id = 'cuerpoLista'
+                    tabla.appendChild(body);
+
+                    for (let i = 0; i < reproduciendo.length; i++) {
+                        reproduciendo[i].id = i + 1
+                    }
+
+                    reproduciendo.forEach(entry => {
+                        const row = document.createElement(`tr`);
+                        body.appendChild(row);
+
+                        for (const propiedad in entry) {
+                            if (propiedad !== 'src') {
+                                const cell = document.createElement(`td`);
+                                cell.textContent = entry[propiedad];
+                                row.appendChild(cell);
+                            }
+                        }
+                    });
+                } else {
+                    alert('No hay archivos .mp3 para reproducir')
+                }
             }
         }
 
@@ -229,7 +228,7 @@ function crearReproductor(element) {
         if (fila.length !== 0) {
             crearReproductor(fila[0]);
         } else {
-            alert('No hay archivos para reproducir')
+            alert('No hay más archivos para reproducir')
 
             const tabla = document.getElementById('reproduccion')
             tabla.removeChild(tabla.firstChild);

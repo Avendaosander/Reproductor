@@ -292,7 +292,8 @@ a {
     }
 
     th, td {
-        padding: 5px 15px;
+        font-size: 13px;
+        padding: 5px 10px;
     }
 
     .creadores {
@@ -330,7 +331,7 @@ a {
     }
 
     th, td {
-        padding: 5px 10px;
+        font-size: 10px;
     }
 
     .diseñadores {
